@@ -54,6 +54,13 @@ class Group(models.Model):
     name = models.CharField(max_length=2555, null=True, blank=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     student = models.ManyToManyField(Student)
+    IS_ACTIVE = 'IS_ACTIVE'
+    IN_ACTIVE = 'IN_ACTIVE'
+    STATUS_CHOICES = [
+        (IS_ACTIVE, "is_active"),
+        (IN_ACTIVE, "in_active"),
+    ]
+    status = models.CharField(max_length=25, default=IN_ACTIVE, choices=STATUS_CHOICES)
 
     def __str__(self):
         return self.name

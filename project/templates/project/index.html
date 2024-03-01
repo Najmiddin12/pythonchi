@@ -9,11 +9,10 @@
     <script id=www-widgetapi-script src=https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async=""></script>
     <script src=https://www.youtube.com/player_api></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
-    <link rel="stylesheet preload" as=style href={% static 'project/assets/css/preload.min.css' %}>
     <link rel="stylesheet preload" as=style href={% static 'project/assets/css/icomoon.css' %}>
     <link rel="stylesheet preload" as=style href={% static 'project/assets/css/lib.min.css' %}>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel=stylesheet href={% static 'project/assets/css/indexs.min.css' %}>
+    <link rel=stylesheet href={% static 'project/assets/css/index.min.css' %}>
     <link rel=stylesheet href={% static 'project/assets/css/floatbutton.min.css' %}>
     <link href="{% static 'project/assets/img/snakeing.png' %}" rel="icon">
 </head>
@@ -49,8 +48,8 @@
                     <a class=nav-item href=#contact>Bog'lanish</a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="header_nav-list_item dropdown">
-                    <a class="btn btn--yellow dropdown-toggle d-inline-flex align-items-center" style="height: 50px" href="{% url 'profile' pk=user.pk %}" data-bs-toggle=collapse data-bs-target=#coursesMenu data-trigger=dropdown aria-expanded=false aria-controls=coursesMenu data-page=courses>{{ user.username }}</a>
+                <li class="header_nav-list_item">
+                    <a class="nav-item btn" style="height: 50px;background: #2575fc;color: #ffffff;" href="{% url 'profile' pk=user.pk %}">{{ user.username }}</a>
                 </li>
                 {% else %}
                 <li class="header_nav-list_item dropdown">
